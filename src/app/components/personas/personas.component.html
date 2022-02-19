@@ -1,0 +1,24 @@
+<h2>Formulario</h2>
+<form>
+    <label for="fname">Nombre:</label><br>
+    <input type="text" id="fname" name="fname" #nombre><br>
+    <label for="lname">Apellido:</label><br>
+    <input type="text" id="lname" name="lname" #apellido><br><br>
+    <!-- pudimos tambien mandar las valores de los input directamente: agregarPersona(nombre.value, apellido.value) -->
+    <input type="submit" value="Agregar" (click)="agregarPersona()"><br><br>
+    <span>{{saludo}}</span>
+</form>
+
+<h2>Lista de personas</h2>
+<ul>
+    <!-- recibe propiedades del padre, en este caso mandamos el objeto persona y el i que es de tipo number -->
+    <!-- emite el evento saludo que es un string y se lo mandamos al padre mediante un metodo definido en el padre -->
+    <!-- al enviar las propiedades tambien funciona si lo hacemos sin las comillas doble, por ejemplo: [persona] = persona -->
+    <app-persona 
+        *ngFor="let persona of personas; let i = index" 
+        [persona] = "persona" 
+        [i] = "i"
+        (saludo) = "actualizarSaludo($event)"></app-persona>
+</ul>
+
+
