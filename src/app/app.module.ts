@@ -8,18 +8,25 @@ import { AppComponent } from './app.component';
 import { PersonasComponent } from './components/personas/personas.component';
 import { PersonaComponent } from './components/persona/persona.component';
 import { EmpleadoComponent } from './components/empleado/empleado.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { UsuarioService } from './services/usuario.service';
 
 @NgModule({
+  // componentes creados
   declarations: [
     AppComponent,
     EmpleadoComponent,
     PersonasComponent,
-    PersonaComponent
+    PersonaComponent,
+    UsuariosComponent
   ],
+  // modulos usados
   imports: [
     BrowserModule, FormsModule
   ],
-  providers: [],
+  // servicios creados
+  providers: [UsuarioService],
+  // componente raiz
   bootstrap: [AppComponent]
 })
 export class AppModule { }

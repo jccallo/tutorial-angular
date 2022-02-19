@@ -1,0 +1,16 @@
+<h2>Formulario de usuario</h2>
+<form>
+    <label for="fname">Nombre:</label><br>
+    <input type="text" id="fname" name="fname" #nombre><br>
+    <label for="lname">Apellido:</label><br>
+    <input type="text" id="lname" name="lname" #apellido><br><br>
+    <!-- mando los valores de los input (usando variable de referencia) al metodo enviarUsuario -->
+    <input type="submit" value="Agregar" (click)="capturarUsuario(nombre.value, apellido.value)"><br>
+</form>
+
+<h2>Lista de usuarios</h2>
+<ul>
+    <!-- uso la directiva ngFor -->
+    <!-- si es una etiqueta HTML uso directamente los valores de usuario -->
+    <li *ngFor="let usuario of usuarios; let i = index">{{i + 1}}. {{usuario.nombre}} {{usuario.apellido}}</li>
+</ul>
