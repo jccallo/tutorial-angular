@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-empleado',
   templateUrl: './empleado.component.html',
   styleUrls: ['./empleado.component.css']
 })
-export class EmpleadoComponent implements OnInit {
+export class EmpleadoComponent {
 
   // propiedades del empleado
   // se maneja 3 modificadores: public (default), private y protected
@@ -29,11 +29,6 @@ export class EmpleadoComponent implements OnInit {
     } else {
       this.estadoCivil = false;
     }
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
 }

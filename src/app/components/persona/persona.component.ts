@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Persona } from 'src/app/models/persona.model';
 
 @Component({
@@ -6,7 +6,7 @@ import { Persona } from 'src/app/models/persona.model';
   templateUrl: './persona.component.html',
   styleUrls: ['./persona.component.css']
 })
-export class PersonaComponent implements OnInit {
+export class PersonaComponent {
 
   // indicamos que recibira propiedades y declaramos e inicializamos dichos propiedades
   @Input() persona: Persona = new Persona();
@@ -18,11 +18,6 @@ export class PersonaComponent implements OnInit {
   // setea el saludo desde el template persona cada vez que se cliclea el boton
   saludar(persona: Persona):void {
     this.saludo.emit(`Hola soy ${persona.nombre} ${persona.apellido}`);
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
 }

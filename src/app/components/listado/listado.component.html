@@ -1,0 +1,12 @@
+<h2>Listado de usuarios</h2>
+<ul>
+    <!-- uso la directiva ngFor -->
+    <!-- si es una etiqueta HTML uso directamente los valores de usuario -->
+    <li *ngFor="let usuario of usuarios; let i = index">
+        {{i + 1}}. {{usuario.nombre}} {{usuario.apellido}} 
+        <!-- ojo que si ponemos una barra inclinada al inicio este me señalara que la ruta parte desde la raiz -->
+        <!-- si la quito me señalara una ruta relativa, teniendo como raiz la ruta en el que aparece el componente -->
+        <!-- en el caso de queryParams no se tiene que especificar nada en la seccion de listado de rutas, pero routerLink si! -->
+        <a [routerLink]="['/perfil', i, i + 1]" [queryParams]="{indice: i, otro: 'otro'}" class="btn btn-success btn-sm mb-1">Ver perfil</a>
+    </li>
+</ul>

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Persona } from 'src/app/models/persona.model';
 
 @Component({
@@ -6,7 +6,7 @@ import { Persona } from 'src/app/models/persona.model';
   templateUrl: './personas.component.html',
   styleUrls: ['./personas.component.css']
 })
-export class PersonasComponent implements OnInit {
+export class PersonasComponent {
 
   // obtenemos las referencias de los input marcados como #nombre y #apellido
   @ViewChild("nombre") nombre: ElementRef = {} as ElementRef;
@@ -29,11 +29,6 @@ export class PersonasComponent implements OnInit {
   // actualizamos el saludo que nos manda la persona
   actualizarSaludo(saludo: string):void {
     this.saludo = saludo;
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
 }

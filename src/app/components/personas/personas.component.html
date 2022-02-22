@@ -1,13 +1,14 @@
-<h2>Formulario</h2>
+<h2>Formulario de persona</h2>
 <form>
     <label for="fname">Nombre:</label><br>
     <input type="text" id="fname" name="fname" #nombre><br>
     <label for="lname">Apellido:</label><br>
     <input type="text" id="lname" name="lname" #apellido><br><br>
     <!-- pudimos tambien mandar las valores de los input directamente: agregarPersona(nombre.value, apellido.value) -->
-    <input type="submit" value="Agregar" (click)="agregarPersona()"><br><br>
+    <input type="submit" value="Agregar" class="btn btn-primary" (click)="agregarPersona()"><br><br>
     <span>{{saludo}}</span>
 </form>
+<br>
 
 <h2>Lista de personas</h2>
 <ul>

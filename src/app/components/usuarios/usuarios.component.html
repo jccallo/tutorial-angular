@@ -5,8 +5,9 @@
     <label for="lname">Apellido:</label><br>
     <input type="text" id="lname" name="lname" #apellido><br><br>
     <!-- mando los valores de los input (usando variable de referencia) al metodo enviarUsuario -->
-    <input type="submit" value="Agregar" (click)="capturarUsuario(nombre.value, apellido.value)"><br>
+    <input type="submit" value="Agregar" class="btn btn-primary" (click)="capturarUsuario(nombre.value, apellido.value)"><br>
 </form>
+<br>
 
 <h2>Lista de usuarios</h2>
 <ul>

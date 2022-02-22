@@ -7,6 +7,7 @@ import { MensajeService } from './mensaje.service';
 @Injectable()
 export class UsuarioService {
 
+  // IMPORTANTE: todos los inyecten el servicio de UsuarioService compartiran la misMa lista de usuarios
   // usuarios que tiene las futuras inyecciones de dependencia de UsuarioService
   usuarios: Usuario[] = [
     new Usuario("Armando", "Morales"),
@@ -20,6 +21,17 @@ export class UsuarioService {
   agregarUsuario(usuario: Usuario): void {
     this.usuarios.push(usuario);
     this.mensajeService.mostrarMensaje(`Usuario ${usuario.nombre} ${usuario.apellido} agregado correctamente`);
+  }
+
+  // encuentra un usuario por el Id y lo devuelve
+  obtenerUsuario(id: number): Usuario {
+    return this.usuarios[id];
+  }
+
+  // actualiza al usuario solo en el nombre
+  // se puede hacer lo miso si queremos hacer una especie de CRUD
+  actualizarUsuario(id: number, nombre: string) {
+    this.usuarios[id].nombre = nombre;
   }
 
 }
