@@ -19,7 +19,16 @@ export class UsuariosComponent implements OnInit {
 
   ngOnInit(): void {
     // inicializamos la propiedad usuarios con la referencia a los usuario que trae la inyeccion
-    this.usuarios = this.usuarioService.usuarios;
+    // this.usuarios = this.usuarioService.usuarios;
+
+    // cargamos los datos por primera vez
+    this.usuarioService.cargarUsuarios()
+    .subscribe(
+      (usuarios: Usuario[]) => {
+        this.usuarioService.usuarios = usuarios; // carga los datos a usuarios de usuarioService
+        this.usuarios = this.usuarioService.usuarios; // carga los datos incialmente desde usuarioService
+      }
+    );
   }
 
   // recibe el nombre y el apellido desde el template

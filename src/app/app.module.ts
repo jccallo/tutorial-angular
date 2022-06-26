@@ -15,9 +15,13 @@ import { ListadoComponent } from './components/listado/listado.component';
 // importacion de FormsModule para usar el ngModel
 import { FormsModule } from '@angular/forms';
 
+// importacion de HttpClientModule para usar peticiones
+import { HttpClientModule } from '@angular/common/http';
+
 // importacion de RouterModule y Routes para usar rutas
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './components/error/error.component';
+import { DataService } from './services/data.service';
 
 // guardamos las rutas
 // por default si no ponemos la barra inclinada al inicio de cada nombre de ruta,
@@ -47,12 +51,15 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    // importamos el modulo RouterModule y le indicamos donde guardaremos las rutas
-    RouterModule.forRoot(appRoutes) 
+    RouterModule.forRoot(appRoutes), // importamos el modulo RouterModule y le indicamos donde guardaremos las rutas
+    HttpClientModule // importacion de HttpClientModule para usar peticiones
   ],
 
   // servicios creados deben listarse aqui
-  providers: [UsuarioService],
+  providers: [
+    UsuarioService,
+    DataService
+  ],
 
   // componente raiz
   bootstrap: [AppComponent]
